@@ -1,19 +1,17 @@
 const app = Vue.createApp({
     data() {
         return {
-            apiURL: "./api.php",
+            apiURL: "/api.php",
             tasks: []
         }
     },
     methods: {
-        chiamata() {
-            console.log("Faccio cose, vedo gente");
-        }
+     
     },
     mounted() {
-        axios.get(this.apiURL)
+        axios.get('./api.php')
             .then(response => {
-                this.todos = response.data;
+                this.tasks = response.data;
             })
             .catch(error => {
                 console.error(error);

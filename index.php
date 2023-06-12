@@ -6,12 +6,12 @@
     <title>To Do List</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div id="app">
-        <h1>ToDo List</h1>
+        <h1>To Do List:</h1>
 
         <ul>
             <li v-for="task in tasks" :key="task">
