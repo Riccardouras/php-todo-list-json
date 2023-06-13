@@ -1,13 +1,17 @@
 <?php
-// Array
-$data = array("Spesa", "Bollette", "Barbiere");
-
-// Conversione dell'array in JSON
-$jsonData = json_encode($data);
-
-//header per indicare che il contenuto è JSON
 header('Content-Type: application/json');
 
+$data = file_get_contents("dati.json");
+
+$todoList = json_decode($data, true);
+
+if( isset($_POST['newTask']) ) {
+    $todoList[] = $_POST['newTask'];
+    file_put_contents("dati.json", json_encode($todoList) );
+
+}
+
+$jsonData = json_encode($todoList);
 // Restituzione del JSON
 echo $jsonData;
 ?>

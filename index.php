@@ -14,13 +14,14 @@
         <h1>To Do List:</h1>
 
         <ul>
-            <li v-for="task in tasks" :key="task">
+            <li v-for="(task, i) in tasks" :key="task">
                 {{ task }}
             </li>
         </ul>
+        <input v-model="newTask" type="text" @keyup.enter="addNewTask" >
+        <button @click="addNewTask">Aggiungi</button>
     </div>
-
+    
     <script src="./script.js"></script>
 </body>
-
 </html>
